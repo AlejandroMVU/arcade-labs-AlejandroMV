@@ -48,7 +48,7 @@ arcade.draw_line(630, 435,650,435,arcade.color.BLACK )
 arcade.draw_line(700, 385,700,430,arcade.color.BLACK )
 arcade.draw_ellipse_filled(700,430,15,5,arcade.color.BLACK)
 
-
+arcade.finish_render()
 
 arcade.run()
 
