@@ -49,12 +49,12 @@ arcade.draw_circle_filled(250,600,100,arcade.color.DARK_BLUE)
 #COLINA:
 arcade.draw_circle_filled(400,-350,500,arcade.color.GREEN_YELLOW)
 
-
+arbol(400,250)
 
 #FLORES
 for i in range (25):
     x_flor=random.randrange(200,600)
-    y_flor=random.randrange(0,100)
+    y_flor=random.randrange(0,90)
     flor(x_flor,y_flor)
 
 
@@ -62,7 +62,6 @@ for i in range (25):
 
 
 
-arbol(400,250)
 
 
 #BICICLETA:
