@@ -47,6 +47,9 @@ arcade.draw_circle_filled(250,600,100,arcade.color.DARK_BLUE)
 
 
 #COLINA:
+
+arcade.draw_circle_filled(100,-225,400,arcade.color.DARK_GREEN)
+arcade.draw_circle_filled(700,-225,400,arcade.color.DARK_GREEN)
 arcade.draw_circle_filled(400,-350,500,arcade.color.GREEN_YELLOW)
 
 arbol(400,250)
@@ -84,7 +87,7 @@ arcade.draw_line(700, 385,700,430,arcade.color.BLACK )
 arcade.draw_ellipse_filled(700,430,15,5,arcade.color.BLACK)
 
 
-#ET el extraterrestre del dedo mas feo que un recien nacido arrugado
+#ET el extraterrestre del dedo, mas feo que un recien nacido arrugado
 texture = arcade.load_texture("ET1.png")
 arcade.draw_texture_rectangle(700,450,75,75,texture)
 
