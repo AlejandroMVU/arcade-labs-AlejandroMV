@@ -1,4 +1,4 @@
-from ftplib import print_line
+
 
 
 class Rooms:
@@ -66,6 +66,6 @@ def main():
             else:
                 current_room = next_room
         else:
-            "No entendí."
+            print("No entendí.")
 
 print(main())
