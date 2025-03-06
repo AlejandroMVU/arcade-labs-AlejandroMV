@@ -1,7 +1,6 @@
 """ Lab 7 - User Control """
 import random
 import arcade
-
 # --- Constants ---
 SCREEN_WIDTH = 800
 SCREEN_HEIGHT = 700
@@ -18,6 +17,16 @@ class ovni:
         arcade.draw_circle_filled(self.position_x + 25, self.position_y - 10, 5, arcade.color.YELLOW)
         arcade.draw_circle_filled(self.position_x + 45, self.position_y - 3, 5, arcade.color.PURPLE)
         arcade.draw_circle_filled(self.position_x - 45, self.position_y - 3, 5, arcade.color.GO_GREEN)
+
+class vaca:
+    def __init__(self, position_x, position_y):
+        self.position_x = position_x
+        self.position_y = position_y
+        self.vaca = arcade.load_texture('lab08-sprites/Vaca.png')
+    def draw(self):
+
+        arcade.draw_texture_rectangle(self.position_x, self.position_y, 50, 50, self.vaca )
+
 
 def arbol(x, y):
     arcade.draw_rectangle_filled(x, y, 50, 300, arcade.color.ROSEWOOD)
@@ -40,25 +49,6 @@ def flor(x_f, y_f):
 
 
 
-#def bicicleta(x_b,y_b):
-    # BICICLETA:
-    # ruedas
-#    arcade.draw_circle_outline(650, 400, 15, arcade.color.BLACK)
-#    arcade.draw_circle_outline(700, 400, 15, arcade.color.BLACK)
-#    # lineas en ruedas
- #   arcade.draw_line(685, 400, 715, 400, arcade.color.BLACK)
- #   arcade.draw_line(700, 385, 700, 415, arcade.color.BLACK)
- #   arcade.draw_line(700, 385, 700, 425, arcade.color.BLACK)
-
-  #  arcade.draw_line(635, 400, 665, 400, arcade.color.BLACK)
-   # arcade.draw_line(650, 415, 650, 385, arcade.color.BLACK)
-    #arcade.draw_line(650, 425, 650, 385, arcade.color.BLACK)
-    # manillar etc.
-   # arcade.draw_triangle_outline(650, 425, 700, 425, 675, 400, arcade.color.BLACK)
-   # arcade.draw_line(650, 425, 640, 435, arcade.color.BLACK)
-   # arcade.draw_line(630, 435, 650, 435, arcade.color.BLACK)
-   # arcade.draw_line(700, 385, 700, 430, arcade.color.BLACK)
-   # arcade.draw_ellipse_filled(700, 430, 15, 5, arcade.color.BLACK)
 
 
 # Estrellas:
@@ -81,6 +71,7 @@ class MyGame(arcade.Window):
         super().__init__(SCREEN_WIDTH, SCREEN_HEIGHT, "Lab 7 - User Control")
         self.set_mouse_visible(False)
         self.ovni=ovni(300,300)
+        self.vaca=vaca(300,300)
 
     def on_draw(self):
         arcade.set_background_color(arcade.color.DARK_BLUE)
@@ -104,14 +95,24 @@ class MyGame(arcade.Window):
         #    x_flor = random.randrange(200, 600)
         #    y_flor = random.randrange(0, 90)
         #    flor(x_flor, y_flor)
-
+        self.vaca.draw()
         self.ovni.draw()
         arcade.finish_render()
         self.clear()
+
     def on_mouse_motion(self, x, y, dx, dy):
         self.ovni.position_x= x
         self.ovni.position_y= y
 
+    def on_key_press(self, symbol, modifiers):
+        if symbol == arcade.key.LEFT:
+            self.vaca.position_x-=1
+        if symbol == arcade.key.RIGHT:
+            self.vaca.position_x+=1
+        if symbol == arcade.key.UP:
+            self.vaca.position_y+=1
+        if symbol == arcade.key.DOWN:
+            self.vaca.position_y-=1
 def main():
     window = MyGame()
     arcade.run()
