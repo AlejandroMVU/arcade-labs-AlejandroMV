@@ -65,7 +65,9 @@ def main():
                 print("No puedes ir por ahí")
             else:
                 current_room = next_room
+        elif(direccion=="Done"):
+            done=True
         else:
             print("No entendí.")
 
-print(main())
+main()

@@ -39,7 +39,7 @@ def estrellas(numero_estrellas):
         color=(brillo,brillo,brillo)
         arcade.draw_rectangle_filled(x,y,x1,x1,color,45)
 
-estrellas(65)
+
 
 #LUNA:
 arcade.draw_circle_filled(200,550,100,arcade.color.GHOST_WHITE)
