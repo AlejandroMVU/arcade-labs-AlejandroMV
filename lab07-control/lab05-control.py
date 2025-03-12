@@ -22,7 +22,7 @@ class vaca:
     def __init__(self, position_x, position_y):
         self.position_x = position_x
         self.position_y = position_y
-        self.vaca = arcade.load_texture('lab08-sprites/Vaca.png')
+        self.vaca = arcade.load_texture('Vaca.png')
     def draw(self):
 
         arcade.draw_texture_rectangle(self.position_x, self.position_y, 50, 50, self.vaca )
